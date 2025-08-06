@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.2 on win32)" generated="2025-08-06T15:50:35.368554" rpa="false" schemaversion="5">
+<suite id="s1" name="Verify Login Test" source="C:\Users\91956\PycharmProjects\Robot_Framework\Task_19\tests\verify_login_test.robot">
+<kw name="Launch Browser" owner="login_reusable_keyword" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-06T15:50:35.798394" level="INFO">Opening browser 'chrome' to base url 'https://robotsparebinindustries.com/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-06T15:50:35.798139" elapsed="2.133772"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-08-06T15:50:37.932884" elapsed="0.040791"/>
+</kw>
+<doc>Launches the RobotSpareBinIndustries app in Chrome Browser and Maximize the window</doc>
+<status status="PASS" start="2025-08-06T15:50:35.797528" elapsed="2.176612"/>
+</kw>
+<test id="s1-t1" name="Test Valid Login" line="11">
+<kw name="Navigate to Application" owner="login_reusable_keyword">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${USERNAME_FIELD}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-06T15:50:37.981304" elapsed="0.064319"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-06T15:50:38.266687" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/app.png"&gt;&lt;img src="screenshots/app.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>screenshots/app.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-06T15:50:38.045875" elapsed="0.220971"/>
+</kw>
+<doc>This waits until the page is loaded and the element is visible</doc>
+<status status="PASS" start="2025-08-06T15:50:37.979193" elapsed="0.287833"/>
+</kw>
+<kw name="Input Credentials" owner="login_reusable_keyword">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-06T15:50:38.268210" level="INFO">Typing text 'maria' into text field 'xpath=//input[@id='username']'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${USERNAME_INPUT}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-06T15:50:38.267805" elapsed="0.137270"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-06T15:50:38.406045" level="INFO">Typing text 'thoushallnotpass' into text field 'xpath=//input[@id='password']'.</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${PASSWORD_INPUT}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-06T15:50:38.405456" elapsed="0.162625"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-06T15:50:38.744355" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/login.png"&gt;&lt;img src="screenshots/login.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>screenshots/login.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-06T15:50:38.568667" elapsed="0.175799"/>
+</kw>
+<doc>This Enters the Valid Username and Password into the appropriate field</doc>
+<status status="PASS" start="2025-08-06T15:50:38.267472" elapsed="0.477099"/>
+</kw>
+<kw name="Click Login" owner="login_reusable_keyword">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-06T15:50:38.745395" level="INFO">Clicking button 'xpath=//button[@class='btn btn-primary']'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-06T15:50:38.745207" elapsed="0.097622"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${DASHBOARD_ELEMENT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-06T15:50:38.843078" elapsed="3.025405"/>
+</kw>
+<doc>This clicks on Login button and wait for the Dashboard to load</doc>
+<status status="PASS" start="2025-08-06T15:50:38.744950" elapsed="3.123643"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-06T15:50:41.980111" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-06T15:50:41.868880" elapsed="0.111325"/>
+</kw>
+<kw name="Verify Successful Login" owner="login_reusable_keyword">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-08-06T15:50:41.996017" level="INFO">Element 'xpath=//span[@class="username"]' is displayed.</msg>
+<arg>${DASHBOARD_ELEMENT}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-06T15:50:41.980753" elapsed="0.015374"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-08-06T15:50:42.016407" level="INFO">${dashboard_text} = maria</msg>
+<var>${dashboard_text}</var>
+<arg>${DASHBOARD_ELEMENT}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-06T15:50:41.996301" elapsed="0.020149"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-08-06T15:50:42.016771" level="INFO">Welcome maria</msg>
+<arg>Welcome ${dashboard_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-08-06T15:50:42.016597" elapsed="0.000218"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-06T15:50:42.130083" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/dashboard.png"&gt;&lt;img src="screenshots/dashboard.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>screenshots/dashboard.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-06T15:50:42.016931" elapsed="0.113245"/>
+</kw>
+<doc>This assert the Login is successful by validating the element present in the Dashboard and printing it on the report</doc>
+<status status="PASS" start="2025-08-06T15:50:41.980526" elapsed="0.149740"/>
+</kw>
+<kw name="Logout of Applicaion" owner="login_reusable_keyword">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-06T15:50:42.131042" level="INFO">Clicking element 'xpath=//button[@id="logout"]'.</msg>
+<arg>${LOGOUT_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-06T15:50:42.130841" elapsed="0.073741"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${USERNAME_FIELD}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-06T15:50:42.204738" elapsed="1.275583"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-06T15:50:43.604748" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/logged_out.png"&gt;&lt;img src="screenshots/logged_out.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>screenshots/logged_out.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-06T15:50:43.480476" elapsed="0.124364"/>
+</kw>
+<doc>To click on the logout button and wait for the Login Page to load</doc>
+<status status="PASS" start="2025-08-06T15:50:42.130610" elapsed="1.474322"/>
+</kw>
+<doc>This Test verifies the valid user can Login the application and Logout Successfully</doc>
+<status status="PASS" start="2025-08-06T15:50:37.974827" elapsed="5.630344"/>
+</test>
+<kw name="Close The Browser" owner="login_reusable_keyword" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-08-06T15:50:43.606406" elapsed="2.222606"/>
+</kw>
+<doc>To close the Browser after the test is end</doc>
+<status status="PASS" start="2025-08-06T15:50:43.606230" elapsed="2.223020"/>
+</kw>
+<doc>This test suite verifies login functionality for RobotSpareBinIndustries app.</doc>
+<status status="PASS" start="2025-08-06T15:50:35.370017" elapsed="10.459329"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Verify Login Test" id="s1" pass="1" fail="0" skip="0">Verify Login Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
